@@ -31,13 +31,30 @@ header{
   }
 }
 .carousel{
-  margin-left: 3rem;
-  max-width: 500px;
+  
   background: black;
+  border: 2px solid black;
   border-radius: 10px;
+  box-shadow: 5px 5px black;
 }
 .card{
-  width: 500px;
+  width: 100%;
   border: 2px solid black !important;
   box-shadow: 5px 5px black;
+}
+ .card:hover{
+  background: violet;
+  opacity: 0.7;
+  color: white;
+  transition: 2s;
+ }
+.rounded-fit:hover{
+  
+background-color: violet;
+border: 2px solid black;
+border-radius: 10px;
+opacity: 0.7;
+width: 800px;
+transition: 2s;
+
 }

@@ -12,7 +12,7 @@ const Corrousel = () => {
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
     <div className="carousel-inner">
-      <div className="carousel-item active w-75 ">
+      <div className="carousel-item active ">
         <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
         <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
         <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
@@ -26,8 +26,8 @@ const Corrousel = () => {
       </div>
       <div className="carousel-item">
         <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
+        <img src={reactLogo} className=" w-50 rounded-fit "  alt="..." />
+        <img src={reactLogo} className=" w-50 rounded-fit "  alt="..." />
         <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
       </div>
     </div>
