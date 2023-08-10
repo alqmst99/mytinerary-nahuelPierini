@@ -1,9 +1,10 @@
 import React from 'react'
-import reactLogo from './../../assets/react.svg'
+import travel from './../../../public/plane-solid.svg'
 const NavBar = () => {
   return (
     <nav className="navbar navbar-light text-center" >
-          <img src={reactLogo} alt="LogoApp" />
+          <img src={travel} className='travel' alt="LogoApp" />
+          <div className="d-flex justify-content-center"> </div>
           <h1 className='title'> MyTinerary</h1>
          
           <div>

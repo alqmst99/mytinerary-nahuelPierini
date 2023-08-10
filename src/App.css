@@ -48,7 +48,7 @@ header{
   color: white;
   transition: 2s;
  }
-.rounded-fit:hover{
+.img-thumbnail:hover{
   
 background-color: violet;
 border: 2px solid black;
@@ -65,4 +65,25 @@ a {
 img{
   max-width: 200px;
   max-height: 200px;
+}
+.not{
+  max-width: 200%;
+  max-height: 200%;
+}
+.travel{
+  max-width: 3%;
+  color: yellow;
+  transform: rotate(270deg);
+  
+ 
+}
+.travel:hover{
+  animation: traveling 2s linear infinite;
+ 
+}
+ @keyframes traveling {
+  to {
+    transform: rotate(540deg);
+  }
+}
 }
