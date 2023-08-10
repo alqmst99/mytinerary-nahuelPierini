@@ -1,17 +1,19 @@
 
 import './App.css'
+import Container from './Components/Container/Container'
 import Home from './Pages/Home/home'
-
-
+import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import NotFound from './Pages/NotFound/NotFound'
+const router= createBrowserRouter([
+  {path:'/', element:<Home/>, children:[
+    {path:'/con', element:<Container/>},
+    {path:'/nF', element:<NotFound/>}
+  ]},
+  
+])
 function App() {
 return (
-    <>
-    <div>
-      <Home/>
-    </div>
-    
-
-    </>
+  <RouterProvider router={router}/>
   )
 }
 

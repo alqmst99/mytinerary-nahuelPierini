@@ -58,3 +58,7 @@ width: 800px;
 transition: 2s;
 
 }
+a {
+  text-decoration:none;
+  color: white;
+}

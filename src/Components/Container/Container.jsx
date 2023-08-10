@@ -1,5 +1,5 @@
 import React from 'react'
-import Carrousel from './../../Components/Carrousel/Corrousel'
+import Carrousel from '../../../public/Corrousel'
 import Card from './../../Components/Card/Card'
 const Container = () => {
   return (
