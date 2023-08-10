@@ -2,7 +2,7 @@ import React from 'react'
 import Container from './../../Components/Container/Container'
 import NavBar from './../../Components/NavBar/NavBar'
 import NotFount from './../NotFound/NotFound'//'travel\src\Pages\NotFound\NotFound.jsx'
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Outlet, } from 'react-router-dom'
 
 
 const home = () => {

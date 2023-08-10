@@ -6,7 +6,7 @@ import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import NotFound from './Pages/NotFound/NotFound'
 const router= createBrowserRouter([
   {path:'/', element:<Home/>, children:[
-    {path:'/con', element:<Container/>},
+    {path:'/', element:<Container/>},
     {path:'/nF', element:<NotFound/>}
   ]},
   
