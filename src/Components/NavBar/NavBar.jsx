@@ -2,11 +2,10 @@ import React from 'react'
 import reactLogo from './../../assets/react.svg'
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-light" >
+    <nav className="navbar navbar-light text-center" >
           <img src={reactLogo} alt="LogoApp" />
-          <div className='title'>
-            <h1> MyTinerary</h1>
-          </div>
+          <h1 className='title'> MyTinerary</h1>
+         
           <div>
             <ul className="nav justify-content-end">
               <li className="nav-item">

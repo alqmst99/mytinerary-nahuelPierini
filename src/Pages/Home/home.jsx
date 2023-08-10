@@ -9,7 +9,7 @@ const home = () => {
       <header className="header">
         <NavBar />
       </header>
-      <main>
+      <main className='col-12 col-md-12 col-lg-12'>
         <Container />
       </main>
       <footer className="footer">

@@ -1,37 +1,73 @@
 import React from 'react'
 import reactLogo from './../../assets/react.svg'
-import viteLogo from './../../../public/vite.svg'
+import viteLogo from '../../../public/vite.svg'
+let Cities= [
+  {id: 1, nameC: "France", City: "Paris" },
+  {id: 2, nameC: "France", City: "Paris" },
+  {id: 3, nameC: "France", City: "Paris" },
+  {id: 4, nameC: "France", City: "Paris" },
+  {id: 5, nameC: "EEUU", City: "New York" },
+  {id: 6, nameC: "EEUU", City: "New York" },
+  {id: 7, nameC: "EEUU", City: "New York" },
+  {id: 8, nameC: "EEUU", City: "New York" },
+  {id: 9, nameC: "France", City: "Paris" },
+  {id: 10, nameC: "France", City: "Paris" },
+  {id: 11, nameC: "EEUU", City: "New York" },
+  {id: 12, nameC: "EEUU", City: "New York" },
+ ]
+ 
+
+
 const Corrousel = () => {
   return (
-<div className='col-md-6 col-lg-6 col-sx-3 text-center mx-auto p-1'>
+<div className='container col-12 col-md-6 col-lg-6  text-center '>
     <h2>Popular Mytynerary</h2>
 <div id="carousel" className="carousel slide " data-bs-touch="false" data-bs-interval="false">
 <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-    <div className="carousel-inner">
-      <div className="carousel-item active ">
-        <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
-      </div>
-      <div className="carousel-item">
-        <img src={reactLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={reactLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={reactLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={reactLogo} className=" w-50 rounded-fit "  alt="..." />
-      </div>
-      <div className="carousel-item">
-        <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={reactLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={reactLogo} className=" w-50 rounded-fit "  alt="..." />
-        <img src={viteLogo} className=" w-50 rounded-fit "  alt="..." />
-      </div>
+
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  
+    </div><div className="carousel-inner">
+<div className="carousel-item active " >
+  { Cities.map(city => { 
+    
+   if(city.id <=4){
+  return(
+  <>
+      <img src={reactLogo} key={city.id} className=" w-50 rounded-fit " alt={city.nameC} />
+      
+   </>) 
+    }
+   })}
+   </div>
+   <div className="carousel-item active " >
+   { Cities.map(city => { 
+    
+    if(city.id >4 && city.id <=8 ){
+   return(
+   <>
+       <img src={viteLogo} key={city.id} className=" w-50 rounded-fit " alt={city.nameC} />
+       
+    </>) 
+     }
+    })}
+   </div>
+   <div className="carousel-item active " >
+   { Cities.map(city => { 
+    
+    if(city.id >8 && city.id <=12){
+   return(
+   <>
+       <img src={reactLogo} key={city.id} className=" w-50 rounded-fit " alt={city.nameC} />
+       
+    </>) 
+     }
+    })}
     </div>
-    <button className="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+  </div>
+   <button className="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
       <span className="carousel-control-prev-icon" aria-hidden="true"></span>
       <span className="visually-hidden">Previous</span>
     </button>
@@ -42,7 +78,7 @@ const Corrousel = () => {
   </div>
     </div>
     
-  )
-}
+)}
+
 
 export default Corrousel
