@@ -11,7 +11,7 @@ const Card = () => {
 
             <p className="card-text">Discover the allure of a captivating metropolis. Unveil hidden treasures and vibrant culture.
               Embark on a journey to find the essence of a city that enchants your wanderlust. Let curiosity guide your search for the ultimate urban adventure.</p>
-            <button className='btn btn-primary'> <a className='text-decoration-none ' href="/nF">GO! Your Destiny</a></button>
+            <button className='btn btn-primary'> <a className='text-decoration-none ' href="/Cities">GO! Your Destiny</a></button>
           </div>
         </div>
       </div>
