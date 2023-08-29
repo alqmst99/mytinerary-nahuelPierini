@@ -1,6 +1,6 @@
 import React from "react";
-import CityCard from "../CityCard/citycard";
-import Search from "../Search/search";
+import CityCard from "../../Components/CityCard/citycard";
+import Search from "../../Components/Search/search";
 
 const city = () => {
     return (

@@ -86,4 +86,6 @@ img{
     transform: rotate(540deg);
   }
 }
-
+.cardCity{
+  width: 300px !important;
+}
