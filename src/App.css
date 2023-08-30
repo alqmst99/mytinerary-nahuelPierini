@@ -83,9 +83,20 @@ img{
 }
  @keyframes traveling {
   to {
-    transform: rotate(540deg);
+    transform: rotate(720deg);
   }
 }
 .cardCity{
   width: 300px !important;
+}
+.dropdown{
+  display: none !important;
+}
+@media screen and (max-width: 600px) {
+  .dropdown{
+    display: flex !important;
+  }
+  .bar{
+    display: none;
+  }
 }
