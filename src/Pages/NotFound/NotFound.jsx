@@ -1,5 +1,5 @@
 import React from 'react'
-import imgF from '../../../public/notfount.png'
+import imgF from './../../assets/notfount.png'
 const NotFound = ({} ) => {
   return (
     <div className='nF d-flex justify-content-center'>

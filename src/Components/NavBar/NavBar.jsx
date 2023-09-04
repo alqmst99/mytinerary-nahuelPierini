@@ -1,5 +1,5 @@
 import React from 'react'
-import travel from './../../../public/plane-solid.svg'
+import travel from './../../assets/plane-solid.svg'
 const NavBar = () => {
   return (
     <nav className="navbar navbar-light text-center" >

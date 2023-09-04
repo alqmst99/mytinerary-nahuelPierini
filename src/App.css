@@ -86,7 +86,11 @@ img{
     transform: rotate(720deg);
   }
 }
-.cardCity{
+.cardC{
+  margin-left: 3%;
+  margin-top: 1%;
+  display: inline-block !important;
+  background: transparent;
   width: 300px !important;
 }
 .dropdown{
