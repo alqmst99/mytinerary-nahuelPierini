@@ -48,7 +48,7 @@ const Corrousel = () => {
    if(city.id <=4){
   return(
   <><figure className=' col-lg-5 d-inline-block' >
-     <img src={city.link} key={city.id} className="w-100 img-thumbnail " alt={city.nameC} />
+     <img src={city.link} key={city.id} className="img w-100 img-thumbnail " alt={city.nameC} />
      <h5>{city.nameC}, {city.City} </h5>
   </figure>
    
@@ -64,7 +64,7 @@ const Corrousel = () => {
    return(
    <>
    <figure className='col-lg-5 d-inline-block'>
-     <img src={city.link} key={city.id} className="w-100 img-thumbnail " alt={city.nameC} />
+     <img src={city.link} key={city.id} className=" img w-100 img-thumbnail " alt={city.nameC} />
      <h5>{city.nameC}, {city.City} </h5>
   </figure>
   
@@ -80,7 +80,7 @@ const Corrousel = () => {
    return(
    <>
    <figure className='col-lg-5 d-inline-block '>
-     <img src={city.link} key={city.id} className="w-100 img-thumbnail " alt={city.nameC} />
+     <img src={city.link} key={city.id} className="img w-100 img-thumbnail " alt={city.nameC} />
      <h5>{city.nameC}, {city.City} </h5>
   </figure>
  

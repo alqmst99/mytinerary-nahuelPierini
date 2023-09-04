@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -9,12 +10,12 @@ const {city, country, img, _id}=data
 console.log(data)
     return(
         <div className="card cardC col-4">
-      <img src={img} className="card-img-top img-fluid " alt="City example"/>
+      <img src={img} className="img card-img-top img-fluid " alt="City example"/>
       <div className="card-body">
         <p className="card-text">{city} </p>
         <p className="card-text">{country} </p>
        
-        <button className='btn btn-primary'> <a className='text-decoration-none ' href="/Cities">Details</a></button>
+        <Link to={"/city/" + _id} className="btn btn-secondary col-4 align-self-center">Details</Link>
       </div>
      
     </div>)
