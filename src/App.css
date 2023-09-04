@@ -91,6 +91,7 @@ a {
   margin-top: 1%;
   display: inline-block !important;
   background: transparent;
+  text-align: center;
   width: 300px !important;
 }
 .dropdown{
