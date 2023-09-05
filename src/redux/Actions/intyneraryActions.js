@@ -3,8 +3,8 @@ import { server } from "../../Utils/axios";
 
 const getInty = createAsyncThunk('getInty', async () =>{
 try {
-    const res = await server.get('/cities')
-    console.log(res);
+    const res = await server.get('/inty/intyneraries')
+    console.log(res.data.response);
     return res.data.response
 } catch (error) {
     console.log(error)
@@ -13,7 +13,8 @@ try {
 })
 const getOneInty = createAsyncThunk('getOneInty', async ({id})=>{
     try {
-        const res = await server.get('/inty/intynery/'+ id)
+        const res = await server.get('/inty/intynerary/'+ id)
+        console.log(res.data.response);
         return res.data.response 
     } catch (error) {
         console.log(error)

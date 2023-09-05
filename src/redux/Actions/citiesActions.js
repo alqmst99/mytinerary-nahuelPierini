@@ -14,7 +14,7 @@ try {
 const getCity = createAsyncThunk('getCity', async ({id})=>{
     try {
         const res = await server.get('/city/'+ id)
-        console.log(res);
+        console.log(res.data.response);
         return res.data.response 
     } catch (error) {
         console.log(error)

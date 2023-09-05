@@ -3,7 +3,7 @@ import CityCard from "../../Components/CityCard/citycard";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getCities } from "../../redux/Actions/citiesActions.js";
-import { store } from "../../redux/store";
+
 
 
 
@@ -12,11 +12,6 @@ const city = () => {
     const citiesD = useDispatch();
     const { loading, cities } = useSelector(store => store.citiesReducer);
     console.log(cities)
-
-
-
-//function searcher
-
 
 
 //method filter search

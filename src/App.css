@@ -109,3 +109,7 @@ a {
   color: yellow !important;
   background: black !important;
 }
+.textI,.titleI{
+  margin-top: 15%;
+  font-size: 2rem;
+}
