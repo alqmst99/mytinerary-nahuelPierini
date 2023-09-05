@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import CityP from "../../Components/CityP/CityP";
 import { useDispatch, useSelector } from "react-redux";
 import { getCity } from "../../redux/Actions/citiesActions";
+import { getInty } from "../../redux/Actions/intyneraryActions";
 import { useParams } from "react-router-dom";
 import IntyneraryModal from "../../Components/ItyneraryModal/IntyModal";
-import { getInty } from "../../redux/Actions/intyneraryActions";
+
 
 
 const City= ()=>{
@@ -15,18 +16,14 @@ const City= ()=>{
     const {city, loading}= useSelector(store => store.citiesReducer)
 
     //function select intinerary
-if(intys.city === city){
-  console.log('si es ' + intys.id.toString());
-}
-
+let intyF= intys.filter(data=>{return (data.city._id === city._id)})
+console.log(intyF);
     //useEffect
     useEffect(()=>{
         cityD(getCity({ id })),
         intynD(getInty())
     }, [])
-    console.log(intys.map(data=>{ data.city
   
-    }));
     if (loading) {
         return <h1 className='text-6xl text-white'> Loading ...</h1>
     }
@@ -47,7 +44,12 @@ if(intys.city === city){
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
-        <IntyneraryModal key={city.id} data={city}/>
+        {intyF.map(each =>{
+          
+            console.log(each);
+            return(<><IntyneraryModal key={each._id} data={each}/></> )
+        
+        })}
       </div>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

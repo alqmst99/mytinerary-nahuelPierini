@@ -9,6 +9,7 @@ const intyneraryReducer = createReducer( initialState , (builder) =>
     builder
     .addCase(getInty.fulfilled, (state, action) => {
         const newState = { ...state, loading: false, intys: action.payload, load: false }
+        console.log(newState)
         return newState
     })
     .addCase(getInty.pending, (state, action) => {

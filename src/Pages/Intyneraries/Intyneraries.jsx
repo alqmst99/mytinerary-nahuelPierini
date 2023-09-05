@@ -6,6 +6,6 @@ import { store } from "../../redux/store";
 import { getCity } from "../../redux/Actions/citiesActions";
  
 
-const intyneraries = ()=> {
+const Intyneraries = ()=> {
 }
-export default intyneraries
+export default Intyneraries
