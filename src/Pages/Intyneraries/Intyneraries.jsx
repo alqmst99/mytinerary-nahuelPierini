@@ -1,11 +1,22 @@
 import React, { useEffect } from "react";
-import CityP from "../../Components/CityP/CityP";
+import IntyneraryModal from "../../Components/ItyneraryModal/IntyModal";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { store } from "../../redux/store";
-import { getCity } from "../../redux/Actions/citiesActions";
+import { getOneInty } from "../../redux/Actions/intyneraryActions";
+const Intyneraries = ({data})=>{
+const id= useParams()
+const inty = useSelector(state => state.intyneraryReducer)
+const dispach= useDispatch()
+useEffect(()=>{
+    dispach(getOneInty(id))
+})
  
 
-const Intyneraries = ()=> {
+
+    return(
+        <>
+        <IntyneraryModal key={inty.id} data={inty}/>
+        </>
+    )
 }
 export default Intyneraries
