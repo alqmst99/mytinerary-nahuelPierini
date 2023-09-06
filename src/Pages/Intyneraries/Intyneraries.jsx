@@ -5,22 +5,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOneInty } from "../../redux/Actions/intyneraryActions";
 import Itynerary from "../../Components/Itynerary/Itynerary";
 
-const Intyneraries = ({data})=>{
+const Intyneraries = ()=>{
 const id= useParams()
 const {inty, load} = useSelector(state => state.intyneraryReducer)
 const dispach= useDispatch()
- const int =inty
-const _id= inty._id
+ 
+//const _id=  inty._id
 console.log(id);
 useEffect(()=>{
-    dispach(getOneInty(_id))
+    dispach(getOneInty(id))
 }, [])
  
-
-
-    return(
+ return(
         <>
-        <Itynerary key={inty.id} data={inty} />
+        <Itynerary key={inty._id} data={inty} />
         </>
     )
 }

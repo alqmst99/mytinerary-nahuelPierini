@@ -20,9 +20,7 @@ const Itynerary = ({data})=>{
 
 
     }, [])
-    if (load) {
-        return (<h1 className='text-6xl text-white'> Loading ...</h1>)
-    } else {
+   
 
         return (
             <div>
@@ -45,6 +43,6 @@ const Itynerary = ({data})=>{
                 <h2 className="text-center">Activities</h2>
                 <NotFound/>
             </div>)
-    }
+    
 }
 export default Itynerary
