@@ -10,8 +10,8 @@ header{
     -225deg,
     #231557 0%,
     #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
+    #002beb 67%,
+    #ff00ff 100%
   );
   background-size: auto auto;
   background-clip: border-box;
@@ -106,10 +106,19 @@ a {
   }
 }
 .detail:hover{
-  color: yellow !important;
+  color: rgb(8, 8, 0) !important;
   background: black !important;
+  text-shadow: 2px  2px rgb(3, 250, 24);
+  background-color: black !important;
+   transition: 2s !important;
 }
 .textI,.titleI{
-  margin-top: 15%;
+  margin-top: 10%;
   font-size: 2rem;
 }
+.imgD:hover{
+  background-color: black !important;
+  border: 2px solid black !important;
+  border-radius: 10px !important;
+  transition: 2s !important;}
+ 

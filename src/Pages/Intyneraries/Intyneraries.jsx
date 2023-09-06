@@ -6,12 +6,13 @@ import { getOneInty } from "../../redux/Actions/intyneraryActions";
 import Itynerary from "../../Components/Itynerary/Itynerary";
 
 const Intyneraries = ()=>{
+
 const id= useParams()
 const {inty, load} = useSelector(state => state.intyneraryReducer)
 const dispach= useDispatch()
  
 //const _id=  inty._id
-console.log(id);
+console.log(load);
 useEffect(()=>{
     dispach(getOneInty(id))
 }, [])

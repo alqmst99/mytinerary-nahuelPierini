@@ -5,7 +5,7 @@ const CityP = ({data})=>{
     const {city, description, img, score, _id}=data
     return(
         <div class="card text-bg-dark detail">
-  <img src={img} class="card-img" alt={city}/>
+  <img src={img} class="card-img imgD" alt={city}/>
   <div class="card-img-overlay text-center textI">
     <h5 class="card-title titleI">City: {city}</h5>
     <p class="card-text">About: {description}</p>

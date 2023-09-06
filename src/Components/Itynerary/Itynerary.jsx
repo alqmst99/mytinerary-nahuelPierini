@@ -5,7 +5,7 @@ import { getOneInty } from "../../redux/Actions/intyneraryActions";
 import NotFound from "./../../Pages/NotFound/NotFound"
 
 const Itynerary = ({data})=>{
-    const { title, author, imgU, Price, duration, like, task, _id } = data
+    const { title, author, imgU, Price, duration, like, task } = data
     const { id } = useParams()
     const intyD = useDispatch()
 
@@ -23,25 +23,34 @@ const Itynerary = ({data})=>{
    
 
         return (
-            <div>
-                <div className="card text-center mb-3" >
+            <div >
+                
+                <div className="card text-center " >
                     <h5 className="card-title">{title}</h5>
                     <img className="imgfluid" src={inty} alt={author} />
 
                     <div className="card-body">
+                    <div className="container d-flex justify-content-around ">
+                        <div className="">
                         <img className="userI img rounded-circle" src={imgU} alt={author} />
                         <h5 className="card-title">{author}</h5>
 
+                        </div>
+                        <div>
                         <p className="card-text">duracion: {duration} </p>
                         <p className="card-text">  Hastack : {task}</p>
                         <p className="card-text">likes: {like} </p>
                         <p className="card-text">  Price : {Price}</p>
-
+                        </div>
+                        </div>
                         
                     </div>
+                
                 </div>
+                <div>
                 <h2 className="text-center">Activities</h2>
                 <NotFound/>
+                </div>
             </div>)
     
 }

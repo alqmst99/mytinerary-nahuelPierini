@@ -3,7 +3,7 @@ html{
         width: 100%;
         height: 100vh;
         color: #fff;
-        background: linear-gradient(45deg,blue,red,green,black);
+        background: linear-gradient(45deg,blue,rgb(54, 5, 133),rgb(128, 0, 111),black);
         background-size: 400% 400%;
         position: relative;
         animation: cambiar 10s ease-in-out infinite;

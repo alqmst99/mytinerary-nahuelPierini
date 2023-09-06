@@ -12,7 +12,7 @@ const IntyneraryModal = ({ data }) => {
     const { inty, load } = useSelector(store => store.intyneraryReducer)
 
 
-    console.log(id)
+    console.log(_id)
 
 
     useEffect(() => {
