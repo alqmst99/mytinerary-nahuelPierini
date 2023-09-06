@@ -26,7 +26,7 @@ console.log(intyF);
   
     if (loading) {
         return <h1 className='text-6xl text-white'> Loading ...</h1>
-    }
+    }else{
     
     
     return( 
@@ -60,6 +60,6 @@ console.log(intyF);
 </div>
     </div>
     </div>
-    )
+    )}
 }
 export default City

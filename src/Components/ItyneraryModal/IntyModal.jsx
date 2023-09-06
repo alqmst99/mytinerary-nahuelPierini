@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getInty, getOneInty } from "../../redux/Actions/intyneraryActions";
-
+import NotFound from "./../../Pages/NotFound/NotFound"
 
 const IntyneraryModal = ({ data }) => {
     const { title, author, imgU, Price, duration, like, task, _id } = data
@@ -45,6 +45,7 @@ const IntyneraryModal = ({ data }) => {
                         <Link to={"/intynerary/" + _id} className="btn btn-primary col-4" >Go somewhere</Link>
                     </div>
                 </div>
+               
             </div>)
     }
 }

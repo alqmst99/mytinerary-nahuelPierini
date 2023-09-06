@@ -3,11 +3,31 @@ import React from "react";
 
 const Itynerary = ({data})=>{
 
-    return(
-        <div>
-            <i class="fa-duotone fa-money-bill-wave" style="--fa-primary-color: #27511f; --fa-secondary-color: #27511f;"></i>
+    if (load) {
+        return (<h1 className='text-6xl text-white'> Loading ...</h1>)
+    } else {
 
-        </div>
-    )
+        return (
+            <div>
+                <div className="card text-center mb-3" >
+                    <h5 className="card-title">{title}</h5>
+                    <img className="imgfluid" src={inty} alt={author} />
+
+                    <div className="card-body">
+                        <img className="userI img rounded-circle" src={imgU} alt={author} />
+                        <h5 className="card-title">{author}</h5>
+
+                        <p className="card-text">duracion: {duration} </p>
+                        <p className="card-text">  Hastack : {task}</p>
+                        <p className="card-text">likes: {like} </p>
+                        <p className="card-text">  Price : {Price}</p>
+
+                        
+                    </div>
+                </div>
+                <h2 className="text-center">Activities</h2>
+                <NotFound/>
+            </div>)
+    }
 }
 export default Itynerary
