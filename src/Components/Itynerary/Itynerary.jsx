@@ -1,8 +1,25 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getOneInty } from "../../redux/Actions/intyneraryActions";
+import NotFound from "./../../Pages/NotFound/NotFound"
 
 const Itynerary = ({data})=>{
+    const { title, author, imgU, Price, duration, like, task, _id } = data
+    const { id } = useParams()
+    const intyD = useDispatch()
 
+    const { inty, load } = useSelector(store => store.intyneraryReducer)
+
+
+    console.log(id)
+
+
+    useEffect(() => {
+        intyD(getOneInty({ id }))
+
+
+    }, [])
     if (load) {
         return (<h1 className='text-6xl text-white'> Loading ...</h1>)
     } else {

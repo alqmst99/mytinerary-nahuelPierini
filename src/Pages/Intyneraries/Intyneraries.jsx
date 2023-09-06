@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import IntyneraryModal from "../../Components/ItyneraryModal/IntyModal";
+import IntyneraryModal from "../../Components/Itynerary/Itynerary";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneInty } from "../../redux/Actions/intyneraryActions";
+import Itynerary from "../../Components/Itynerary/Itynerary";
 
 const Intyneraries = ({data})=>{
 const id= useParams()
@@ -19,7 +20,7 @@ useEffect(()=>{
 
     return(
         <>
-        <IntyneraryModal key={inty._id} data={inty}/>
+        <Itynerary key={inty.id} data={inty} />
         </>
     )
 }

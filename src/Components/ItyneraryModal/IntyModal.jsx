@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getInty, getOneInty } from "../../redux/Actions/intyneraryActions";
-import NotFound from "./../../Pages/NotFound/NotFound"
+
 
 const IntyneraryModal = ({ data }) => {
     const { title, author, imgU, Price, duration, like, task, _id } = data
@@ -25,7 +25,7 @@ const IntyneraryModal = ({ data }) => {
 
     if (load) {
         return (<h1 className='text-6xl text-white'> Loading ...</h1>)
-    } else {
+    } else if(data.length !== 0) {
 
         return (
             <div>
@@ -34,19 +34,26 @@ const IntyneraryModal = ({ data }) => {
                     <img className="imgfluid" src={inty} alt={author} />
 
                     <div className="card-body">
+                        <div className="d-flex justify-content-around align-items-center">
                         <img className="userI img rounded-circle" src={imgU} alt={author} />
                         <h5 className="card-title">{author}</h5>
 
-                        <p className="card-text">duracion: {duration} </p>
-                        <p className="card-text">  Hastack : {task}</p>
-                        <p className="card-text">likes: {like} </p>
-                        <p className="card-text">  Price : {Price}</p>
+                        </div>
+                        <div className="d-flex justify-content-around">
+                        <p className="card-text">Duracion: {duration} </p>
+                        <p className="card-text">  Hastack : {task} </p>
+                        <p className="card-text">Likes: {like} </p>
+                        <p className="card-text">  Price : {Price} </p>
+                        </div>
 
                         <Link to={"/intynerary/" + _id} className="btn btn-primary col-4" >Go somewhere</Link>
                     </div>
                 </div>
                
             </div>)
+    }else {
+        return (<div><h2>Don't have Ityneraries</h2></div>)
+        
     }
 }
 
