@@ -4,8 +4,9 @@ import { Link, useParams } from "react-router-dom";
 import { getInty, getOneInty } from "../../redux/Actions/intyneraryActions";
 
 
-const IntyneraryModal = ({ data }) => {
+const IntyneraryModal = ({ data, data2 }) => {
     const { title, author, imgU, Price, duration, like, task, _id } = data
+    const {img, city, country}=data2
     const { id } = useParams()
     const intyD = useDispatch()
 
@@ -31,8 +32,8 @@ const IntyneraryModal = ({ data }) => {
             <div>
                 <div className="card text-center mb-3" >
                     <h5 className="card-title">{title}</h5>
-                    <img className="imgfluid" src={inty} alt={author} />
-
+                    <img className="imgfluid" src={img} alt={author} />
+                        
                     <div className="card-body">
                         <div className="d-flex justify-content-around align-items-center">
                         <img className="userI img rounded-circle" src={imgU} alt={author} />

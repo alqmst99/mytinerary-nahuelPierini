@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import { getOneInty } from "../../redux/Actions/intyneraryActions";
 import NotFound from "./../../Pages/NotFound/NotFound"
 
-const Itynerary = ({data})=>{
+const Itynerary = ({data, data2})=>{
     const { title, author, imgU, Price, duration, like, task } = data
+    const {img, city, localitation}=data2
     const { id } = useParams()
     const intyD = useDispatch()
 
@@ -27,11 +28,11 @@ const Itynerary = ({data})=>{
                 
                 <div className="card text-center " >
                     <h5 className="card-title">{title}</h5>
-                    <img className="imgfluid" src={inty} alt={author} />
-
-                    <div className="card-body">
+                    <img className="imgfluid card-img" src={img} alt={city} />
+                    <h2>{city}</h2>
+                    <div className="card-body" >
                     <div className="container d-flex justify-content-around ">
-                        <div className="">
+                        <div className="card-img-overlay">
                         <img className="userI img rounded-circle" src={imgU} alt={author} />
                         <h5 className="card-title">{author}</h5>
 
@@ -45,7 +46,11 @@ const Itynerary = ({data})=>{
                         </div>
                         
                     </div>
-                
+                    <div>
+                <frameset>
+                    <iframe src={localitation} frameborder="0"></iframe>
+                </frameset>
+                </div>
                 </div>
                 <div>
                 <h2 className="text-center">Activities</h2>
@@ -54,4 +59,4 @@ const Itynerary = ({data})=>{
             </div>)
     
 }
-export default Itynerary
+export default Itynerary.forceUpdate() 

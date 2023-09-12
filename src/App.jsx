@@ -7,10 +7,12 @@ import Cities from './Pages/Cities/cities'
 import Intyneraries from './Pages/Intyneraries/Intyneraries'
 import NotFound from './Pages/NotFound/NotFound'
 import City from './Pages/City/city'
+import Register from './Components/Register/Register'
 
 const router= createBrowserRouter([
   {path:'/', element:<Home/>, children:[
     {path:'/', element:<Container/>},
+    {path:'/register', element:<Register/>},
     {path:'/intynerary/:id', element:<Intyneraries/>},
     {  path: '/city/:id', element: <City/>},
     {path:'/nF', element:<NotFound/>},

@@ -8,38 +8,41 @@ import { getCities } from "../../redux/Actions/citiesActions.js";
 
 
 const city = () => {
-    const   [searchs, setS ] = React.useState();
+    const   [searchs, setS ] = React.useState("");
     const citiesD = useDispatch();
     const { loading, cities } = useSelector(store => store.citiesReducer);
     console.log(cities)
 
+    useEffect(() => {
+
+        citiesD(getCities())
+    }, [])
+    
 
 //method filter search
 let citiess = []
+
 if (!searchs) {
     citiess = cities
-}else{
+}else if (searchs){
     citiess= cities.filter(each => {
-        return (each.city.toLowerCase().startsWith(searchs.toLowerCase())||each.country.toLowerCase().startsWith(searchs.toLowerCase()))
+        return ((each.city.toLowerCase().startsWith(searchs.toLowerCase()))||(each.country?.toLowerCase().startsWith(searchs.toLowerCase())))
     } )
+}else{
+    return (<>
+    <h1>Not fint to result</h1>
+    </> )
 }
 
-useEffect(() => {
 
-    citiesD(getCities())
-
-
-}, [])
 if (loading) {
     return <h1 className=' text-6xl text-white'> Loading ...</h1>
 }
 return (
     <div className="row  col-12">
         <div className="searchB">
-            
-                <input value={searchs} onChange={e => setS(e.target.value)} className="form-control me-2" type="text" placeholder="Search your favorite city..."  />
-                
-           
+                <input value={searchs} onChange={search => setS(search.target.value)} className="form-control me-2" type="text" placeholder="Search your favorite city..."  />
+               
         </div>
 
         <div className="cardCity col-12 ">

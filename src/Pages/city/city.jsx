@@ -47,7 +47,7 @@ console.log(intyF);
         {intyF.map(each =>{
           
             console.log(each);
-            return(<><IntyneraryModal key={each._id} data={each}/></> )
+            return(<><IntyneraryModal key={each?._id} data={each} data2={city} /></> )
         
         })}
       </div>

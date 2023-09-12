@@ -1,5 +1,6 @@
 import React from 'react'
 import travel from './../../assets/plane-solid.svg'
+import Login from '../Login/Login'
 const NavBar = () => {
   return (
     <nav className="navbar navbar-light text-center" >
@@ -19,7 +20,25 @@ const NavBar = () => {
             <a className="nav-link" href="/nF">About</a>
           </li>
           <li className="nav-item">
-            <button className='btn btn-primary' ><i className="fa fa-user"></i></button>
+            <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#Login" ><i className="fa fa-user"></i></button>
+
+            <div className="modal fade " id="Login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content  Log">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="staticBackdropLabel">SigUp</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div className="modal-body">
+                    <Login />
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -27,7 +46,7 @@ const NavBar = () => {
       <div class="dropdown">
         <button className='btn btn-primary dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="fa fa-user"></i></button>
         <ul class="dropdown-menu">
-        <li className="nav-item">
+          <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li className="nav-item">
