@@ -1,9 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { server } from "../../Utils/axios";
+import { toast } from 'react-toastify';
 
 const Login = ()=>{
 
+  const navigate = useNavigate()
+  const inputEmail = useRef();
+  const inputPass = useRef();
+  const dispatch = useDispatch()
+
+  const handleSubmit = async () => {
+      try {
+          const userData = {
+              email: inputEmail.current.value,
+              password: inputPass.current.value,
+          }
+          const { data } = await server.post('/auth/login', userData)
+          console.log(data);
+          await dispatch(authActions.signUp(data.response))
+          toast.success(data.message)
+          navigate('/')
+      } catch (error) {
+          const { message } = error.response.data
+          console.log(error)
+          toast.error(message)
+
+      }
+  }
 
     return(<section >
     <div class="container-fluid">
@@ -22,17 +47,17 @@ const Login = ()=>{
               <h3 class="fw-normal mb-3 pb-3" >Log in</h3>
   
               <div class="form-outline mb-4">
-                <input type="email" id="form2Example18" class="form-control form-control-lg" />
-                <label class="form-label" for="form2Example18">Email address</label>
+                <input type="email" ref={inputEmail} id="email" class="form-control form-control-lg" />
+                <label class="form-label" for="email">Email address</label>
               </div>
   
               <div class="form-outline mb-4">
-                <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                <label class="form-label" for="form2Example28">Password</label>
+                <input type="password" ref={inputPass} id="password" class="form-control form-control-lg" />
+                <label class="form-label" for="password">Password</label>
               </div>
   
               <div class="pt-1 mb-4">
-                <button class="btn btn-info btn-lg btn-block" type="button">Login</button>
+                <button class="btn btn-info btn-lg btn-block" onClick={handleSubmit} type="button">Login</button>
               </div>
   
               <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>

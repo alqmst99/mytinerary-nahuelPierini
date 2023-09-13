@@ -59,4 +59,4 @@ const Itynerary = ({data, data2})=>{
             </div>)
     
 }
-export default Itynerary.forceUpdate() 
+export default Itynerary
