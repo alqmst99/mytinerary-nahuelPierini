@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { server } from "../../Utils/axios";
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
 
 const Login = ()=>{
 
@@ -20,7 +20,7 @@ const Login = ()=>{
           const { data } = await server.post('/auth/login', userData)
           console.log(data);
           await dispatch(authActions.signUp(data.response))
-          toast.success(data.message)
+         
           navigate('/')
       } catch (error) {
           const { message } = error.response.data
@@ -47,12 +47,12 @@ const Login = ()=>{
               <h3 class="fw-normal mb-3 pb-3" >Log in</h3>
   
               <div class="form-outline mb-4">
-                <input type="email" ref={inputEmail} id="email" class="form-control form-control-lg" />
+                <input type="email" ref={inputEmail} id="emailL" class="form-control form-control-lg" />
                 <label class="form-label" for="email">Email address</label>
               </div>
   
               <div class="form-outline mb-4">
-                <input type="password" ref={inputPass} id="password" class="form-control form-control-lg" />
+                <input type="password" ref={inputPass} id="passwordL" class="form-control form-control-lg" />
                 <label class="form-label" for="password">Password</label>
               </div>
   
