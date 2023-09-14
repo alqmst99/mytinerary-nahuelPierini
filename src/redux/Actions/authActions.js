@@ -1,12 +1,14 @@
-import {  createAsyncThunk } from "@reduxjs/toolkit";
+import {  createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { server } from "../../Utils/axios";
 
-const singUP = createAsyncThunk('singUp', async ()=>{
-    try {
-        const res = await server.post ('/auth/singup')
-        return res.data.request
 
-    } catch (error) {
-        
+
+
+const signUp = createAction('signUp', (data) => {
+
+    return {
+        payload: data
     }
-} )
+})
+
+export default { signUp }
