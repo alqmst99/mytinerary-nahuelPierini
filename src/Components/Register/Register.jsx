@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { server } from "../../Utils/axios";
 import GoogleButton from "../Button/GoogleButton";
-import { useDispatch, useSelector } from "react-redux";
-import {singUp} from '../../redux/Reducers/authReducer.js'
+import { useDispatch } from "react-redux";
+import singUp from '../../redux/Reducers/authReducer.js'
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-const {user}= useSelector(store=> store.authReducer)
+    const navigate = useNavigate()
 const dispatch= useDispatch()
 
 
@@ -26,7 +27,7 @@ const dispatch= useDispatch()
         })
     }
 
-    const handleSubmitData = async (e) => {
+    const handleSubmitData = async (reg) => {
       e.preventDefault()
         const userData = { ...reg }
         alert('se toco')
@@ -35,6 +36,7 @@ const dispatch= useDispatch()
             const res = await server.post('/auth/singup', userData)
             console.log(res);
             dispatch(singUp(res.data))
+            navigate('/')
         }
     }
     const handleSubmitDataGoogle = async (reg) => {
@@ -46,6 +48,7 @@ const dispatch= useDispatch()
               const res = await server.post('/auth/singup', userData)
               console.log(res);
               dispatch(singUp(res.data))
+              navigate('/cities')
           }
       }
 

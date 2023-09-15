@@ -1,28 +1,37 @@
 import {  createAction, createAsyncThunk } from "@reduxjs/toolkit";
 
-const signUp = createAction('signUp', (data) => {
+const signUp = createAction('signUp', (credentials) => {
 
     const dataReduce ={
-        user: data.userData,
-        token: data.token,
-        status: online
+        user: credentials.userData,
+        token: credentials.token,
+        status: 'online'
     }
 
     return {
         payload: dataReduce
     }
 })
-const login = createAction('login', (data)=>{
+
+
+const login = createAction('login', (credentials) => {
     const dataReduce ={
-        user: data.userData,
-        token: data.token,
-        status: online
+        user: credentials.userData,
+        token: credentials.token,
+        status: 'online'
     }
     return{
-        payload:dataReduce
+        payload: dataReduce
             }
 })
-const authenticate=  createAsyncThunk.fullfieled('authenticate', ()=> {
+
+const authenticate=createAsyncThunk('authenticate', () => {
+    server.get('/auth/token')
+    const dataReduce ={
+        user: credentials.userData,
+        token: credentials.token,
+        status: 'online'
+    }
     return{
 payload:'algo'
     }
