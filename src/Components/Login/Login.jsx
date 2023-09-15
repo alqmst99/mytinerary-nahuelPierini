@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import { server } from "../../Utils/axios";
-
-import authActions from "../../redux/Actions/authActions";
+import GoogleButton from "../Button/GoogleButton";
+import {login} from "../../redux/Actions/authActions.js";
 
 const Login = ()=>{
 
-  const navigate = useNavigate()
+  const Navigate = useNavigate()
   const inputEmail = useRef();
   const inputPass = useRef();
   const dispatch = useDispatch()
@@ -21,14 +21,37 @@ const Login = ()=>{
           const { data } = await server.post('/auth/login', userData)
           console.log(data);
           await dispatch(authActions.signUp(data.response))
-          navigate('/')
+          const res= data.response
+          dispatch(login(res.data))
+          alert('welcome ' + data.userData.name)
+          Navigate('/cities')
       } catch (error) {
-          const { message } = error
+         
           console.log(error)
         
 
       }
   }
+  const handleSubmitGoogle = async () => {
+    try {
+        const userData = {
+            email: inputEmail.current.value,
+            password: inputPass.current.value,
+        }
+        const { data } = await server.post('/auth/login', userData)
+        console.log(data);
+        await dispatch(authActions.signUp(data.response))
+        const res= data.response
+        dispatch(login(res.data))
+        alert('welcome ' + data.userData.name)
+        Navigate('/cities')
+    } catch (error) {
+       
+        console.log(error)
+      
+
+    }
+}
 
     return(<section >
     <div className="container-fluid">
@@ -57,14 +80,15 @@ const Login = ()=>{
               </div>
   
               <div className="pt-1 mb-4">
-                <button className="btn btn-info btn-lg btn-block" onClick={handleSubmit} type="button">Login</button>
+                <button className="btn btn-info btn-lg btn-block" onClick={handleSubmit} data-bs-dismiss="modal" type="button">Login</button>
               </div>
   
               <p className="small mb-5 pb-lg-2"><a className="text-muted" href="#!">Forgot password?</a></p>
               <p>Don't have an account? </p>
               <button className="btn btn-primary" data-bs-dismiss="modal"><Link  to={'/register'}>Register here</Link></button>
               
-  
+              <p><b> Or sign up with:</b></p>
+                                            <GoogleButton fn={handleSubmitGoogle}/>
             </form>
   
           </div>

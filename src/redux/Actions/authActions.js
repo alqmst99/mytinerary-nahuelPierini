@@ -1,14 +1,31 @@
 import {  createAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { server } from "../../Utils/axios";
-
-
-
 
 const signUp = createAction('signUp', (data) => {
 
+    const dataReduce ={
+        user: data.userData,
+        token: data.token,
+        status: online
+    }
+
     return {
-        payload: data
+        payload: dataReduce
+    }
+})
+const login = createAction('login', (data)=>{
+    const dataReduce ={
+        user: data.userData,
+        token: data.token,
+        status: online
+    }
+    return{
+        payload:dataReduce
+            }
+})
+const authenticate=  createAsyncThunk.fullfieled('authenticate', ()=> {
+    return{
+payload:'algo'
     }
 })
 
-export default { signUp }
+export default { signUp, login, authenticate }

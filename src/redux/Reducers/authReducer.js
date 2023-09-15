@@ -1,13 +1,29 @@
 import { createReducer } from "@reduxjs/toolkit";
-import authActions from "../Actions/authActions";
+import{signUp, Login, authenticate} from "../Actions/authActions";
+import Login from "../../Components/Login/Login";
+
+
 const initialState = {
-    full_name: '',
-    is_online: false,
-    email: '',
-    photo: ''
+     user: '',
+    state: offline,
+    token: null,
+   
 }
 const authReducer = createReducer(initialState, (builder) =>
-    builder.addCase(authActions.signUp, (state, action) => {
+    builder
+    .addCase(signUp, (state, action) => {
+        return {
+            ...state,
+            ...action.payload
+        }
+    })
+    .addCase(Login, (state, acction)=> {
+        return {
+            ...state,
+            ...action.payload
+        }
+    })
+    .addCase(authenticate, (state, acction)=> {
         return {
             ...state,
             ...action.payload

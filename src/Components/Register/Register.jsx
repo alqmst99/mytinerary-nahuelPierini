@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { server } from "../../Utils/axios";
-
-
+import GoogleButton from "../Button/GoogleButton";
+import { useDispatch, useSelector } from "react-redux";
+import {singUp} from '../../redux/Reducers/authReducer.js'
 
 const Register = () => {
+const {user}= useSelector(store=> store.authReducer)
+const dispatch= useDispatch()
+
 
     const [reg, setReg] = useState({
         email: "",
@@ -30,8 +34,20 @@ const Register = () => {
             delete userData.verified
             const res = await server.post('/auth/singup', userData)
             console.log(res);
+            dispatch(singUp(res.data))
         }
     }
+    const handleSubmitDataGoogle = async (reg) => {
+     
+          const userData = { ...reg }
+          alert('se toco')
+          if (!userData.verified) {
+            
+              const res = await server.post('/auth/singup', userData)
+              console.log(res);
+              dispatch(singUp(res.data))
+          }
+      }
 
 
     return (
@@ -79,7 +95,8 @@ const Register = () => {
                                                 <label className="form-label" for="password">password</label>
                                                 <input type="password" name="password" onChange={handleChangeData} value={reg.password} id="password" className="form-control form-control-lg" />
                                             </div>
-
+                                            <p><b> Or sign up with:</b></p>
+                                            <GoogleButton fn={handleSubmitDataGoogle}/>
 
                                             <div className="d-flex justify-content-end pt-3">
                                                
