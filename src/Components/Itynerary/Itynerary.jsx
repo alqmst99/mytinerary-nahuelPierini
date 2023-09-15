@@ -27,35 +27,32 @@ const Itynerary = ({data, data2})=>{
             <div >
                 
                 <div className="card text-center " >
-                    <h5 className="card-title">{title}</h5>
-                    <img className="imgfluid card-img" src={img} alt={city} />
-                    <h2>{city}</h2>
-                    <div className="card-body" >
-                    <div className="container d-flex justify-content-around ">
-                        <div className="card-img-overlay">
+                    <h1 className="card-title">{title}</h1>
+                      <div className="card-body" >
+                    <div className="container d-flex justify-content-around">
+                       <div>
                         <img className="userI img rounded-circle" src={imgU} alt={author} />
                         <h5 className="card-title">{author}</h5>
 
                         </div>
-                        <div>
-                        <p className="card-text">duracion: {duration} </p>
-                        <p className="card-text">  Hastack : {task}</p>
-                        <p className="card-text">likes: {like} </p>
-                        <p className="card-text">  Price : {Price}</p>
+                        <div className="text-start" > 
+                        <h3 className="card-text"><samp><b>duracion:</b> {duration}</samp> </h3>
+                        <h3 className="card-text"> <samp><b>Hastack :</b> {task}</samp> </h3>
+                        <h3 className="card-text"><samp><b>likes:</b> {like}</samp>  </h3>
+                        <h3 className="card-text"> <samp><b>Price :</b> {Price}</samp> </h3>
                         </div>
-                        </div>
+                       
                         
                     </div>
                     <div>
-                <frameset>
-                    <iframe src={localitation} frameborder="0"></iframe>
-                </frameset>
+               
                 </div>
                 </div>
                 <div>
                 <h2 className="text-center">Activities</h2>
                 <NotFound/>
                 </div>
+            </div>
             </div>)
     
 }

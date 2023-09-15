@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import travel from './../../assets/plane-solid.svg'
 import Login from '../Login/Login'
+import { useSelector } from 'react-redux'
 const NavBar = () => {
+const {user} = useSelector( store => store.authReducer)
+console.log(user)
+
   return (
     <nav className="navbar navbar-light text-center" >
       <img src={travel} className='travel' alt="LogoApp" />
@@ -20,7 +24,10 @@ const NavBar = () => {
             <a className="nav-link" href="/nF">About</a>
           </li>
           <li className="nav-item">
-            <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#Login" ><i className="fa fa-user"></i></button>
+          { (user?.photo )
+          ? <img  src={user.photo} className="img-circle" style={{maxWidth:"25px", borderRadius:"10px" } }/>: <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#Login" ><i className="fa fa-user"></i></button> 
+        
+        }
 
             <div className="modal fade " id="Login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div className="modal-dialog">
@@ -46,6 +53,12 @@ const NavBar = () => {
       <div class="dropdown">
         <button className='btn btn-primary dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="fa fa-user"></i></button>
         <ul class="dropdown-menu">
+        <li className="nav-item">
+        { (user?.photo )
+          ? <a className="nav-link active" aria-current="page" href="#">Log Out</a>: <a className="nav-link active" aria-current="page" href="/login">Login</a> 
+        
+        }
+          </li>
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="/">Home</a>
           </li>
