@@ -13,30 +13,30 @@ const Login = () => {
   const dispatch = useDispatch()
 
   const handleSubmit = async () => {
-   
-      const userData = {
-        email: inputEmail.current.value,
-        password: inputPass.current.value,
-      }
-      const res = await server.post('/auth/login', userData)
-      console.log(res);
-      dispatch(authActions.login(res.data))
-      alert('welcome ' + res.data.userData.name)
-      Navigate('/cities')
-   
+
+    const userData = {
+      email: inputEmail.current.value,
+      password: inputPass.current.value,
+    }
+    const res = await server.post('/auth/login', userData)
+    console.log(res);
+    dispatch(authActions.login(res.data))
+    alert('welcome ' + res.data.userData.name)
+    Navigate('/cities')
+
   }
   const handleSubmitGoogle = async () => {
-    
-      const userData = {
-        email: inputEmail.current.value,
-        password: inputPass.current.value,
-      }
-      const res = await server.post('/auth/login', userData)
-      console.log(res);
-      dispatch(authActions.login(res.data))
-       alert('welcome ' + res.data.userData.name)
-      Navigate('/cities')
-   
+
+    const userData = {
+      email: inputEmail.current.value,
+      password: inputPass.current.value,
+    }
+    const res = await server.post('/auth/login', userData)
+    console.log(res);
+    dispatch(authActions.login(res.data))
+    alert('welcome ' + res.data.userData.name)
+    Navigate('/cities')
+
   }
 
   return (<section >
@@ -68,13 +68,13 @@ const Login = () => {
               <div className="pt-1 mb-4">
                 <button className="btn btn-info btn-lg btn-block" onClick={handleSubmit} data-bs-dismiss="modal" type="button">Login</button>
               </div>
-
+              <p><b> Or sign up with:</b></p>
+              <GoogleButton fn={handleSubmitGoogle} />
               <p className="small mb-5 pb-lg-2"><a className="text-muted" href="#!">Forgot password?</a></p>
               <p>Don't have an account? </p>
               <button className="btn btn-primary" data-bs-dismiss="modal"><Link to={'/register'}>Register here</Link></button>
 
-              <p><b> Or sign up with:</b></p>
-              <GoogleButton fn={handleSubmitGoogle} />
+
             </form>
 
           </div>
