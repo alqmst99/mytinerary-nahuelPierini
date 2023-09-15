@@ -41,6 +41,8 @@ const Login = () => {
 
   return (<section >
     <div className="container-fluid">
+<i class="fa-solid fa-circle-arrow-left"><Link to='/' className="btn btn-secondary col-4 ">Back</Link></i>
+
       <div className="row">
         <div className="col-sm-6 ">
 

@@ -3,6 +3,7 @@ import CityCard from "../../Components/CityCard/citycard";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getCities } from "../../redux/Actions/citiesActions.js";
+import { Link } from "react-router-dom";
 
 
 
@@ -42,10 +43,12 @@ return (
     <div className="row  col-12">
         <div className="searchB">
                 <input value={searchs} onChange={search => setS(search.target.value)} className="form-control me-2" type="text" placeholder="Search your favorite city..."  />
-               
+                <i class="fa-solid fa-circle-arrow-left"></i>
         </div>
 
         <div className="cardCity col-12 ">
+        <i class="fa-solid fa-circle-arrow-left"><Link to='/' className="btn btn-secondary col-4 ">Back</Link></i>
+        
             {
                 citiess.map(data => <CityCard key={data._id} data={data} />)
             }
